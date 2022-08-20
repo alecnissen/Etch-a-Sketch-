@@ -12,8 +12,7 @@ for (let i = 1; i < 273; i++) {
 
 
 function gridPrompt() { 
-    // button.addEventListener('click', prompt('Enter')); 
-    prompt('Enter the number of square per side for a new grid'); 
+    let userInput = prompt('Enter the number of square per side for a new grid'); 
 }
 
  
