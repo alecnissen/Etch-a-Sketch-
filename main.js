@@ -2,9 +2,16 @@ const cdiv = document.querySelector('.container');
 
 
 function erase(ele) { 
-cdiv.childNodes.forEach((child) => 
-child.style.backgroundColor = "white"    
-) 
+
+while (cdiv.firstChild) { 
+    cdiv.removeChild(cdiv.lastChild); 
+} 
+
+
+
+// cdiv.childNodes.forEach((child) => 
+// child.style.backgroundColor = "white"    
+
 } 
 
 
@@ -17,21 +24,23 @@ child.style.backgroundColor = "white"
 } 
  
 
-function gridPrompt() { 
+function gridPrompt() {     
+// if user enters number too high, prompt to enter a number between 1-100 
+// if user enters negative number, prompt user to enter a positive integer 
 
     let userInput = prompt('Enter the number of squares per side for a new grid'); 
     
     if (userInput <= 100) {     
-        erase();     
+        erase();      
 
     for (let i = 0; i < userInput; i++) { 
         const div = document.createElement('div'); 
         div.addEventListener('mouseover', e => e.target.classList.add('my-color-class'));  
         cdiv.appendChild(div);    
     } 
-} 
+}      
 
-    } 
+    }  
   
 
 // create function to reset the board, so userinput can be updated 
