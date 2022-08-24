@@ -8,6 +8,10 @@
     display: flex;
     /* display: grid;  */
     flex-wrap: wrap;
+    width: 400px; 
+    height: 400px; 
+    /* max-width: 500px;
+    max-height: 500px;  */
 } 
 
 .container>div { 
@@ -26,4 +30,5 @@
 
 .my-color-class { 
     background-color: purple;
-}
+} 
+
