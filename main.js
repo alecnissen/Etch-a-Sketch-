@@ -1,17 +1,14 @@
 const cdiv = document.querySelector('.container'); 
 
+// let globalSize = 16; 
+
+
 
 function erase(ele) { 
 
 while (cdiv.firstChild) { 
     cdiv.removeChild(cdiv.lastChild); 
 } 
-
-
-
-// cdiv.childNodes.forEach((child) => 
-// child.style.backgroundColor = "white"    
-
 } 
 
 
@@ -21,27 +18,41 @@ while (cdiv.firstChild) {
     div.addEventListener('mouseover', e => e.target.classList.add('my-color-class')); 
     cdiv.appendChild(div);   
     document.append.body;  
-} 
+}
+ 
  
 
-function gridPrompt() {     
-// if user enters number too high, prompt to enter a number between 1-100 
-// if user enters negative number, prompt user to enter a positive integer 
-
-    let userInput = prompt('Enter the number of squares per side for a new grid'); 
+function gridPrompt() {        
     
-    if (userInput <= 100) {     
-        erase();      
+    let userInput = prompt('Enter the number of rows or columns'); 
+    
+    // globalSize = `${userInput}`; 
 
-    for (let i = 0; i < userInput; i++) { 
+    
+    if (userInput <= 100) {  
+        erase();                        
+
+    for (let i = 0; i < (userInput ** 2); i++) {      
         const div = document.createElement('div'); 
+        div.setAttribute('style', `width:${400/userInput}px; height: ${400/userInput}px`); 
         div.addEventListener('mouseover', e => e.target.classList.add('my-color-class'));  
         cdiv.appendChild(div);    
     } 
-}      
 
-    }  
-  
+    // for (let i = 0; i < userInput; i++) { 
+    //     const div = document.createElement('div'); 
+    //     div.addEventListener('mouseover', e => e.target.classList.add('my-color-class'));  
+    //     cdiv.appendChild(div);  
+
+    // }
+
+} 
+} 
+
+
+
+         
+   
 
 // create function to reset the board, so userinput can be updated 
 

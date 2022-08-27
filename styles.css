@@ -8,10 +8,10 @@
     display: flex;
     /* display: grid;  */
     flex-wrap: wrap;
-    width: 400px; 
+    width: 400px;  
     height: 400px; 
-    /* max-width: 500px;
-    max-height: 500px;  */
+    /* max-width: auto; 
+    max-height: auto;  */
 } 
 
 .container>div { 
