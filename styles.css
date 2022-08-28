@@ -1,17 +1,17 @@
 * { 
     box-sizing:border-box;
-
 } 
 
 
 .container { 
     display: flex;
-    /* display: grid;  */
     flex-wrap: wrap;
     width: 400px;  
     height: 400px; 
+    /* position:relative; 
+    left: 50em; */
     /* max-width: auto; 
-    max-height: auto;  */
+    max-height: auto;  */ 
 } 
 
 .container>div { 
@@ -32,3 +32,8 @@
     background-color: purple;
 } 
 
+
+
+.button { 
+    align-items: center;
+}

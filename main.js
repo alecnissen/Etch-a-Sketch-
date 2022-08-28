@@ -1,8 +1,15 @@
-const cdiv = document.querySelector('.container'); 
+const cdiv = document.querySelector('.container');  
 
-// let globalSize = 16; 
+let grid = function defaultGrid() { 
+for (let i = 0; i < 256; i++) { 
+const div = document.createElement('div'); 
+div.addEventListener('mouseover', e => e.target.classList.add('my-color-class')); 
+cdiv.appendChild(div);   
+document.append.body;  
+}
+} 
 
-
+grid();  
 
 function erase(ele) { 
 
@@ -12,13 +19,12 @@ while (cdiv.firstChild) {
 } 
 
 
- 
-    for (let i = 0; i < 256; i++) { 
-    const div = document.createElement('div'); 
-    div.addEventListener('mouseover', e => e.target.classList.add('my-color-class')); 
-    cdiv.appendChild(div);   
-    document.append.body;  
+function clear() { 
+    
 }
+
+
+ 
  
  
 
