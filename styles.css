@@ -8,6 +8,7 @@
     flex-wrap: wrap;
     width: 400px;  
     height: 400px; 
+    /* margin-left: 800px; */
     /* position:relative; 
     left: 50em; */
     /* max-width: auto; 
@@ -32,8 +33,15 @@
     background-color: purple;
 } 
 
+.change-background { 
+    background-color: white;
+}
 
 
-.button { 
+/* .button { 
     align-items: center;
+}  */
+
+h1 { 
+    text-align: center;
 }
