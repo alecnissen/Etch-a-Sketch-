@@ -18,7 +18,8 @@ const cdiv = document.querySelector('.container');
     //     cdiv.removeChild(cdiv.lastChild);    
 
 
-function draw() {     
+function draw() {   
+// cdiv.classList.remove('change-background');   
 cdiv.addEventListener('mouseover', e => e.target.classList.add('my-color-class')); 
 // cdiv.appendChild(containerDiv); 
 // document.append.body;
@@ -28,16 +29,28 @@ cdiv.addEventListener('mouseover', e => e.target.classList.add('my-color-class')
 
 
 function erase() { 
+    // cdiv.classList.remove('my-color-class');   
     cdiv.addEventListener('mouseover', e => e.target.classList.add('change-background')); 
     // cdiv.appendChild(containerDiv); 
     // document.append.body; 
 }  
 
 function clear() { 
-       while (cdiv.firstChild) {  
-    cdiv.removeChild(cdiv.lastChild);  
-}
+    while (cdiv.firstChild) {  
+        cdiv.removeChild(cdiv.lastChild);  
+    }
 } 
+
+function clearPaint() { 
+
+    let children = cdiv.childNodes;     
+    
+    children.forEach(function(child) { 
+        child.classList.remove('my-color-class'); 
+        child.classList.remove('change-background'); 
+    })
+} 
+
 
 
 function gridPrompt() {        
@@ -48,8 +61,7 @@ function gridPrompt() {
 
     
     if (userInput <= 100) {  
-        clear();         
-                         
+       clear();
 
     for (let i = 0; i < (userInput ** 2); i++) {      
         const div = document.createElement('div'); 
@@ -61,6 +73,7 @@ function gridPrompt() {
     
 } 
 } 
+ 
 
 
 
