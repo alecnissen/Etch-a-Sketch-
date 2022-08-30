@@ -1,46 +1,44 @@
 const cdiv = document.querySelector('.container');  
-let containerDiv = document.querySelector('div'); 
-
-// cdiv.setAttribute('style', align-items: center); 
-
-let grid = function defaultGrid() { 
-for (let i = 0; i < 256; i++) { 
-const div = document.createElement('div'); 
-// div.addEventListener('mouseover', e => e.target.classList.add('my-color-class')); 
-cdiv.appendChild(div);   
-document.append.body;  
-}
-} 
-
-grid(); 
+// let containerDiv = document.querySelector('div'); 
 
 
+// function defaultGrid() { 
+    for (let i = 0; i < 256; i++) { 
+        const div = document.createElement('div'); 
+        // div.addEventListener('mouseover', e => e.target.classList.add('my-color-class')); 
+        cdiv.appendChild(div);   
+        // document.append.body;  
+    }
+    // } 
+    
+    // defaultGrid(); 
+    
+    // old erase function code 
+    // while (cdiv.firstChild) {  
+    //     cdiv.removeChild(cdiv.lastChild);    
 
-function draw() { 
+
+function draw() {     
 cdiv.addEventListener('mouseover', e => e.target.classList.add('my-color-class')); 
 // cdiv.appendChild(containerDiv); 
-document.append.body;
+// document.append.body;
 } 
+
+
 
 
 function erase() { 
     cdiv.addEventListener('mouseover', e => e.target.classList.add('change-background')); 
     // cdiv.appendChild(containerDiv); 
     // document.append.body; 
-// while (cdiv.firstChild) {  
-//     cdiv.removeChild(cdiv.lastChild);    
 }  
 
+function clear() { 
+       while (cdiv.firstChild) {  
+    cdiv.removeChild(cdiv.lastChild);  
+}
+} 
 
-
-// function reset() { 
-
-// }
-
-
- 
- 
- 
 
 function gridPrompt() {        
     
@@ -50,27 +48,28 @@ function gridPrompt() {
 
     
     if (userInput <= 100) {  
-        erase();                        
+        clear();         
+                         
 
     for (let i = 0; i < (userInput ** 2); i++) {      
         const div = document.createElement('div'); 
         div.setAttribute('style', `width:${400/userInput}px; height: ${400/userInput}px`); 
-        div.addEventListener('mouseover', e => e.target.classList.add('my-color-class'));  
+        // div.addEventListener('mouseover', e => e.target.classList.add('my-color-class'));  
         cdiv.appendChild(div);    
     } 
 
-    // for (let i = 0; i < userInput; i++) { 
-    //     const div = document.createElement('div'); 
-    //     div.addEventListener('mouseover', e => e.target.classList.add('my-color-class'));  
-    //     cdiv.appendChild(div);  
-
-    // }
-
+    
 } 
 } 
 
 
 
+// for (let i = 0; i < userInput; i++) { 
+//     const div = document.createElement('div'); 
+//     div.addEventListener('mouseover', e => e.target.classList.add('my-color-class'));  
+//     cdiv.appendChild(div);  
+
+// }
          
    
 
