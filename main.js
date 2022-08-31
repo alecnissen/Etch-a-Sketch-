@@ -18,21 +18,21 @@ const cdiv = document.querySelector('.container');
     //     cdiv.removeChild(cdiv.lastChild);    
 
 
-function draw() {   
-// cdiv.classList.remove('change-background');   
-cdiv.addEventListener('mouseover', e => e.target.classList.add('my-color-class')); 
-// cdiv.appendChild(containerDiv); 
-// document.append.body;
+function draw() {      
+cdiv.addEventListener('mouseover', e => { 
+    e.target.classList.remove('change-background'); 
+    e.target.classList.add('my-color-class'); 
+})  
 } 
 
 
 
-
 function erase() { 
-    // cdiv.classList.remove('my-color-class');   
-    cdiv.addEventListener('mouseover', e => e.target.classList.add('change-background')); 
-    // cdiv.appendChild(containerDiv); 
-    // document.append.body; 
+    cdiv.addEventListener('mouseover', e => { 
+        e.target.classList.remove('my-color-class'); 
+        e.target.classList.add('change-background'); 
+    
+    })
 }  
 
 function clear() { 
