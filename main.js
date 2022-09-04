@@ -1,8 +1,8 @@
 const cdiv = document.querySelector('.container');  
-// let containerDiv = document.querySelector('div'); 
 
 
-// function defaultGrid() { 
+
+// function defaultGrid() {        
     for (let i = 0; i < 256; i++) { 
         const div = document.createElement('div'); 
         // div.addEventListener('mouseover', e => e.target.classList.add('my-color-class')); 
@@ -25,15 +25,25 @@ cdiv.addEventListener('mouseover', e => {
 })  
 } 
 
+let eraseButton = document.getElementById('erase-btn'); 
 
-
-function erase() { 
-    cdiv.addEventListener('mouseover', e => { 
-        e.target.classList.remove('my-color-class'); 
-        e.target.classList.add('change-background'); 
-    
-    })
-}  
+eraseButton.addEventListener('click', e => { 
+    let children = cdiv.childNodes;  
+    children.forEach((child) => {   
+    child.addEventListener('mouseover', e => { 
+    child.style.backgroundColor = 'white'; 
+})
+    }) 
+})
+// function erase() { 
+//     cdiv.addEventListener('mouseover', e => { 
+//         // let div = cdiv.childNodes
+//         // e.target.classList.remove('my-color-class'); 
+//         // e.target.classList.remove('randomColor'); 
+//         // // e.target.classList.add('change-background');  
+//         e.target.style.backgroundColor = 'white';   
+//     }) 
+// }  
 
 function clear() { 
     while (cdiv.firstChild) {  
@@ -44,12 +54,16 @@ function clear() {
 function clearPaint() { 
 
     let children = cdiv.childNodes;     
-    
+    button.removeEventListener('click', button); 
     children.forEach(function(child) { 
-        child.classList.remove('my-color-class'); 
-        child.classList.remove('change-background'); 
-    })
-} 
+
+            child.classList.remove('my-color-class'); 
+            child.classList.remove('change-background'); 
+            child.classList.remove('randomColor'); 
+            child.style.backgroundColor = 'white'; 
+        })
+    }
+
 
 
 
@@ -73,6 +87,56 @@ function gridPrompt() {
     
 } 
 } 
+ 
+// generate random colors on mouseover 
+
+//  function randomColorMaker () { 
+//     const randomColor = Math.floor(Math.random() * 16777215).toString(16); 
+// }
+
+
+// const setBg = () => {     
+//     let children = cdiv.childNodes;  
+//     children.forEach((child) => {   
+//     const randomColor = Math.floor(Math.random() * 16777215).toString(16); 
+//     child.style.backgroundColor = "#" + randomColor; 
+//     child.addEventListener('mouseover', randomColor);   
+//     })  
+// }            
+ 
+// setBg()                                   
+
+
+
+let button = document.getElementById('random-color-btn'); 
+
+button.addEventListener('click', e => { 
+    let children = cdiv.childNodes;  
+    children.forEach((child) => {   
+    const randomColor = Math.floor(Math.random() * 16777215).toString(16); 
+    child.addEventListener('mouseover', e => { 
+    child.style.backgroundColor = "#" + randomColor; 
+})
+
+    })    
+})     
+
+
+
+
+
+// function setBg () {     
+//     let children = cdiv.childNodes;  
+//     children.forEach((child) => {   
+//     const randomColor = Math.floor(Math.random() * 16777215).toString(16); 
+//     child.addEventListener('mouseover', e => { 
+//     child.style.backgroundColor = "#" + randomColor; 
+    
+//     });   
+// })       
+// }            
+
+// setBg();      
  
 
 
@@ -131,4 +195,3 @@ function gridPrompt() {
 
 // let changeColorOfDivs = cdiv.addEventListener('mouseover', e =>  { 
 //     cdiv.style.backgroundColor = 'red'; 
-// }) 
